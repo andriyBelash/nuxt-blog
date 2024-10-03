@@ -1,0 +1,18 @@
+{
+  "auth": {
+    "login": "Login",
+    "signup": "Sign up",
+    "enter_details": "Enter your login details",
+    "enter_registration_details": "Enter your registration details",
+    "email": "Email",
+    "password": "Password",
+    "confirm_password": "Confirm password",
+    "no_account": "Don't have an account?",
+    "already_have_account": "Already have an account?",
+    "username": "Username"
+  },
+
+  "error": {
+    "required_fields": "Required fields are missing"
+  }
+}

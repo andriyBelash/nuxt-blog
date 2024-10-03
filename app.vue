@@ -1,8 +1,16 @@
+<script setup lang="ts">
+  import '@/assets/css/main.css'
+  import Header from './components/base/Header.vue';
+  import { useProfileStore } from '#imports';
+
+
+  await useProfileStore().getMe()
+</script>
+
 <template>
-  <div>
-    <NuxtRouteAnnouncer />
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-  </div>
+  <NuxtRouteAnnouncer />
+  <NuxtLayout class="h-100">
+    <Header/>
+    <NuxtPage />
+  </NuxtLayout>
 </template>

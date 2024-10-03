@@ -1,0 +1,24 @@
+@import './variable.css';
+
+.auth-card{
+  background-color: var(--v-gray);
+  padding: 32px;
+  border-radius: 16px;
+  color: var(--v-primary-text);
+  margin: auto;
+  gap: 24px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.auth-card--form a{
+  color: var(--v-secondary-text);
+}
+
+.auth-card--form a:hover{
+  color: var(--v-blue);
+}
+
+.auth-card--form .ui-button{
+  margin-top: 8px;
+}

@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --v-background: #FFFFFF;
+  --v-secondary-background: #F6F6F7;
+  --v-gray: #E8E8EA;
+  --v-primary-text: #181A2A;
+  --v-secondary-text: #3B3C4A;
+  --white: #FFFFFF;
+  --v-border: #DCDDDF;
+  --v-blue: #4B6BFB;
+}
+
+.dark-mode{
+  --v-background: #181A2A;
+  --v-secondary-background: #141624;
+  --v-gray: #242535;
+  --v-primary-text: #FFFFFF;
+  --v-secondary-text: #BABABF;
+  --white: #FFFFFF;
+  --v-border: #3B3C4A;
+  --v-blue: #4B6BFB;
+}

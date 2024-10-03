@@ -1,0 +1,17 @@
+{
+  "auth": {
+    "login": "Вхід",
+    "signup": "Реєстрація",
+    "enter_details": "Введіть ваші дані для входу",
+    "enter_registration_details": "Введіть ваші дані для реєстрації",
+    "email": "Email",
+    "password": "Пароль",
+    "confirm_password": "Підтвердіть пароль",
+    "no_account": "Не маєте аккаунта?",
+    "already_have_account": "Вже маєте аккаунт?",
+    "username": "Ім'я користувача"
+  },
+  "error": {
+    "required_fields": "Потрібні поля є обов'язковими"
+  }
+}

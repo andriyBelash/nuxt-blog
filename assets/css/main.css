@@ -1,0 +1,40 @@
+@import './variable.css';
+@import './atom.css';
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: var(--v-background);
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.wrapper{
+  max-width: 1246px;
+  padding: 0 30px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.input{
+  background-color: var(--v-secondary-background);
+  border: 1px solid var(--v-border);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 18px;
+  height: 48px;
+  color: var(--v-primary-text);
+}
+
+.input.error{
+  border: 1px solid red;
+}
+
+html, body, #__nuxt, #__layout{
+  height: 100%;
+}
