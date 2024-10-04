@@ -21,5 +21,17 @@
     "passwords_do_not_match": "Passwords do not match",
     "email_already_exists": "Email already exists",
     "username_already_exists": "Username already exists"
+  },
+
+  "tab": {
+    "settings": "Settings",
+    "articles": "Articles"
+  },
+
+  "action": {
+    "edit": "Edit",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "save": "Save"
   }
 }

@@ -8,3 +8,20 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
+.tabs-container{
+  border-bottom: 1px solid var(--v-border);
+}
+
+.tabs-container a{
+  color: var(--v-primary-text);
+  font-weight: 500;
+  padding: 12px;
+  display: inline-block;
+  font-size: 18px;
+}
+
+.tabs-container a.active-link{
+  color: var(--v-blue);
+  border-bottom: 2px solid var(--v-blue);
+}

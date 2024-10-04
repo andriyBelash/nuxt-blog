@@ -68,7 +68,7 @@
   .profile-header-info--avatar{
     width: 150px;
     height: 150px;
-    border-radius: 50%;
+    border-radius: 16px;
     overflow: hidden;
     position: relative;
     top: -50px;

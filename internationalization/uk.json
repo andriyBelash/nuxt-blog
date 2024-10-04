@@ -20,6 +20,17 @@
     "passwords_do_not_match": "Паролі не збігаються",
     "email_already_exists": "Email вже існує",
     "username_already_exists": "Ім'я користувача вже існує"
+  },
 
+  "tab": {
+    "settings": "Налаштування",
+    "articles": "Статті"
+  },
+
+  "action": {
+    "edit": "Редагувати",
+    "delete": "Видалити",
+    "save": "Зберегти",
+    "cancel": "Скасувати"
   }
 }
