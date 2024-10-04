@@ -1,5 +1,8 @@
 import { useApiFetch } from "~/composables/useCustomFetch";
 
+import type { RegisterForm } from "../types/user";
+
+
 export class AuthService {
   public static login(email: string, password: string) {
     return useApiFetch('/auth/login', {
@@ -8,6 +11,13 @@ export class AuthService {
         email,
         password
       }
+    })
+  }
+
+  public static register(form: RegisterForm) {
+    return useApiFetch('/auth/register', {
+      method: 'POST',
+      body: form
     })
   }
 

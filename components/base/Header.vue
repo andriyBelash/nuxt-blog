@@ -32,7 +32,7 @@
 
 <style scoped>
   header{
-    height: 60px;
+    height: 80px;
     position: absolute;
     top: 0;
     left: 0;

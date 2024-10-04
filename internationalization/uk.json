@@ -12,6 +12,12 @@
     "username": "Ім'я користувача"
   },
   "error": {
-    "required_fields": "Потрібні поля є обов'язковими"
+    "required_fields": "Потрібні поля є обов'язковими",
+    "invalid_credentials": "Невірні дані",
+    "min_length_6": "Пароль має бути не менше 6 символів",
+    "invalid_email_format": "Невірний формат email",
+    "passwords_do_not_match": "Паролі не збігаються",
+    "email_already_exists": "Email вже існує",
+    "username_already_exists": "Ім'я користувача вже існує"
   }
 }

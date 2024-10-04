@@ -3,19 +3,23 @@ import { ref, type Ref } from 'vue'
 import { AuthService } from '~/lib/services/auth.service'
 import { useCookie } from '#app'
 import { useProfileStore } from './profile.store'
+import { useToast } from '~/composables/useToast'
 
 import type { Tokens, RegisterForm } from '~/lib/types/user'
+import { UserRole } from '~/lib/types/enum'
 
 export const useAuthStore = defineStore('auth', () => {
 
   const access_token = useCookie('access_token')
   const refresh_token = useCookie('refresh_token')
   const profileStore = useProfileStore()
+  const toast = useToast()
   
   const form: Ref<RegisterForm> = ref({
     email: '',
     password: '',
-    username: ''
+    username: '',
+    role: UserRole.USER
   })
 
   const manageToken = (payload: Tokens) => {
@@ -33,7 +37,28 @@ export const useAuthStore = defineStore('auth', () => {
         }
 
         if(error.value) {
-          console.log(error.value.message)
+          toast.errorToast(error.value.message)
+          return Promise.reject(error.value)
+        }
+      } else {
+        return Promise.reject('required_fields')
+      }
+    } catch (e) {
+      return Promise.reject(e)
+    }
+  }
+
+  const register = async () => {
+    try {
+      if(form.value.email && form.value.password && form.value.username) {
+        const { data, error } = await AuthService.register(form.value)
+        if(data.value) {
+          manageToken(data.value as Tokens)
+          await profileStore.getMe()
+        }
+
+        if(error.value) {
+          toast.errorToast(error.value.message)
           return Promise.reject(error.value)
         }
       } else {
@@ -61,12 +86,14 @@ export const useAuthStore = defineStore('auth', () => {
     form.value = {
       email: '',
       password: '',
-      username: ''
+      username: '',
+      role: UserRole.USER
     }
   }
 
   return {
     form,
+    register,
     logOut,
     refreshToken,
     onSubmit,
