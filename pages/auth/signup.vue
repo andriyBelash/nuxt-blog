@@ -1,10 +1,12 @@
 <script setup lang="ts">
   import '~/assets/css/auth-form.css'
   import { useAuthStore } from '#imports';
+  import { useProfileStore } from '#imports';
   import { toast } from 'vue3-toastify';
 
   const { t } = useI18n()
   const store = useAuthStore()
+  const profile = useProfileStore()
   const localePath = useLocalePath()
 
   const inputType = ref('password')
@@ -18,6 +20,7 @@
         return
       }
       await store.register()
+      await profile.getMe()
       navigateTo(localePath('/'))
     } catch (e: any) {
       if(typeof e === 'string') {
@@ -33,7 +36,7 @@
     <div class="auth-card flex-col">
       <h2 class="auth-card--title">{{ t('auth.signup') }}</h2>
       <p>{{ t('auth.enter_registration_details') }}</p>
-      <form @submit.prevent class="auth-card--form flex-col gap-16">
+      <form @submit.prevent class="auth-card--form flex-col gap-4">
         <input v-model="store.form.username" class="input" type="text" :placeholder="t('auth.username')"/>
         <input v-model="store.form.email" class="input" type="email" :placeholder="t('auth.email')"/>
 

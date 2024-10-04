@@ -9,7 +9,8 @@
     "confirm_password": "Підтвердіть пароль",
     "no_account": "Не маєте аккаунта?",
     "already_have_account": "Вже маєте аккаунт?",
-    "username": "Ім'я користувача"
+    "username": "Ім'я користувача",
+    "log_out": "Вихід"
   },
   "error": {
     "required_fields": "Потрібні поля є обов'язковими",
@@ -19,5 +20,6 @@
     "passwords_do_not_match": "Паролі не збігаються",
     "email_already_exists": "Email вже існує",
     "username_already_exists": "Ім'я користувача вже існує"
+
   }
 }

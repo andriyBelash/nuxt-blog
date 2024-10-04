@@ -3,9 +3,9 @@
 </script>
 
 <template>
-  <div class="locale-container flex gap-8">
+  <div class="locale-container flex gap-2">
     <SwitchLocalePathLink class="locale-switcher" :class="{ 'active-locale': locale === 'en' }" locale="en">En</SwitchLocalePathLink>
-    <hr class="separator"/>
+    <div class="separator"/>
     <SwitchLocalePathLink class="locale-switcher" :class="{ 'active-locale': locale === 'uk' }" locale="uk">Укр</SwitchLocalePathLink>
   </div>
 </template>
@@ -22,5 +22,7 @@
 
   .separator{
     height: 20px;
+    width: 1px;
+    background-color: var(--v-secondary-text);
   }
 </style>

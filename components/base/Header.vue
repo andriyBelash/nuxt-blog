@@ -16,7 +16,7 @@
       <div>
         <ThemeLogo />
       </div>
-      <div class="flex gap-16">
+      <div class="flex gap-4">
 
         <AccountBlock :profile="store.user" v-if="store.user" />
         <NuxtLinkLocale v-else to="/auth/login">

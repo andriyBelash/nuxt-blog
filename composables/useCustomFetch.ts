@@ -19,6 +19,7 @@ export function useApiFetch<T>(path: string, options: UseFetchOptions<T> = {}) {
 
   defaults.onRequest = async ({ request, options }) => {
     const token = useCookie('access_token').value
+    console.log(token, 'TOKEN')
     if (token) {
       options.headers = {
         ...options.headers,

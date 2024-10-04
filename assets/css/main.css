@@ -1,6 +1,9 @@
 @import './variable.css';
 @import './atom.css';
 @import './ui.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 *{
   margin: 0;
@@ -13,6 +16,12 @@ button{
   border: none;
   color: var(--v-primary-text);
   cursor: pointer;
+}
+
+.page{
+  height: 100%;
+  padding-top: 136px;
+  padding-bottom: 48px;
 }
 
 body{

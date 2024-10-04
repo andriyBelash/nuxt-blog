@@ -9,7 +9,8 @@
     "confirm_password": "Confirm password",
     "no_account": "Don't have an account?",
     "already_have_account": "Already have an account?",
-    "username": "Username"
+    "username": "Username",
+    "log_out": "Log out"
   },
 
   "error": {

@@ -9,8 +9,17 @@ export const useProfileStore = defineStore("profile", () => {
   const user: Ref<User | null> = ref(null)
 
   const getMe = async () => {
-    const res = await AuthService.me()
-    user.value = res.data.value as User
+    try {
+      const res = await AuthService.me()
+      setUser(res.data.value as User)
+      user.value = res.data.value as User
+    } catch(e) {
+      return Promise.reject(e)
+    }
+  }
+
+  const setUser = (payload: User) => {
+    user.value = payload
   }
 
   const clearUser = () => {
@@ -20,6 +29,7 @@ export const useProfileStore = defineStore("profile", () => {
   return {
     user,
     getMe,
+    setUser,
     clearUser
   }
 })

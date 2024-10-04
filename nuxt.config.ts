@@ -7,7 +7,8 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@pinia/nuxt',
     '@pinia/nuxt',
-    '@nuxt/icon'
+    '@nuxt/icon',
+    '@nuxtjs/tailwindcss'
   ],
   runtimeConfig: {
     public: {

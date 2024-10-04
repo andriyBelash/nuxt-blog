@@ -5,8 +5,12 @@ import { useCookie } from '#app'
 import { useProfileStore } from './profile.store'
 import { useToast } from '~/composables/useToast'
 
-import type { Tokens, RegisterForm } from '~/lib/types/user'
+import type { Tokens, RegisterForm, User } from '~/lib/types/user'
 import { UserRole } from '~/lib/types/enum'
+
+type AuthResponse = Tokens & {
+  user: User
+}
 
 export const useAuthStore = defineStore('auth', () => {
 
@@ -31,15 +35,18 @@ export const useAuthStore = defineStore('auth', () => {
     try {
       if(form.value.email && form.value.password) {
         const { data, error } = await AuthService.login(form.value.email, form.value.password)
+       
         if(data.value) {
-          manageToken(data.value as Tokens)
-          await profileStore.getMe()
+          const payload = data.value as AuthResponse 
+          manageToken(data.value as Tokens )
+          profileStore.setUser(payload['user'])
         }
 
         if(error.value) {
           toast.errorToast(error.value.message)
           return Promise.reject(error.value)
         }
+        return Promise.resolve()
       } else {
         return Promise.reject('required_fields')
       }
@@ -53,14 +60,16 @@ export const useAuthStore = defineStore('auth', () => {
       if(form.value.email && form.value.password && form.value.username) {
         const { data, error } = await AuthService.register(form.value)
         if(data.value) {
-          manageToken(data.value as Tokens)
-          await profileStore.getMe()
+          const payload = data.value as AuthResponse 
+          manageToken(data.value as Tokens )
+          profileStore.setUser(payload['user'])
         }
 
         if(error.value) {
           toast.errorToast(error.value.message)
           return Promise.reject(error.value)
         }
+        return Promise.resolve()
       } else {
         return Promise.reject('required_fields')
       }
