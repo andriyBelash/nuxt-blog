@@ -62,5 +62,12 @@
       "cropper": "Обрізати зображення"
     },
     "change_password": "Змінити пароль"
+  },
+
+  "seo": {
+    "settings": "Налаштування",
+    "settings_description": "Налаштування профілю",
+    "articles": "Статті",
+    "articles_description": "Статті користувача"
   }
 }

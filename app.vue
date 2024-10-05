@@ -4,8 +4,15 @@
   import { useProfileStore } from '#imports';
   import { useAuthStore } from '#imports';
 
+  useHead({
+    htmlAttrs: {
+      lang: useI18n().locale.value
+    }
+  })
+
   await useAuthStore().refreshToken()
   await useProfileStore().getMe()
+
 </script>
 
 <template>

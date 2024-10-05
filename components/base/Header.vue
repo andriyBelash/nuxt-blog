@@ -4,8 +4,11 @@
   import ThemeLogo from '../header/ThemeLogo.vue';
   import AccountBlock from '../header/AccountBlock.vue';
   import { useProfileStore } from '#imports';
+  import { useRoute } from 'vue-router';
 
   const { t } = useI18n()
+  const route = useRoute()
+  const isAuthPage = computed(() => route.path.includes('/auth'))
 
   const store = useProfileStore()
 </script>
@@ -18,10 +21,12 @@
       </div>
       <div class="flex items-center gap-4">
 
-        <AccountBlock :profile="store.user" v-if="store.user" />
-        <NuxtLinkLocale v-else to="/auth/login">
-          <UiButton :label="t('auth.login')" />
-        </NuxtLinkLocale>
+        <template v-if="!isAuthPage">
+          <AccountBlock :profile="store.user" v-if="store.user" />
+          <NuxtLinkLocale v-else to="/auth/login">
+            <UiButton :label="t('auth.login')" />
+          </NuxtLinkLocale>
+        </template>
         
         <LocaleSwitcher />
         <ThemeSwitcher />

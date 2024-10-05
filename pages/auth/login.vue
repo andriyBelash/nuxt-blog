@@ -25,6 +25,13 @@
 
   const inputType = ref('password')
 
+  useSeoMeta({
+    title: t('auth.login'),
+    ogTitle: t('auth.login'),
+    description: t('auth.enter_details'),
+    ogDescription: t('auth.enter_details'),
+  })
+
 </script>
 
 <template>

@@ -3,15 +3,22 @@
   import { useProfileStore } from '#imports';
   import type { User } from '~/lib/types/user';
 
+  
   const { t } = useI18n()
   const store = useProfileStore()
-
+  
   store.setFormUser(store.user as User)
-
+  
   onUnmounted(() => {
     store.resetFormUser()
   })
-
+  
+  useSeoMeta({
+    title: t('seo.settings'),
+    ogTitle: t('seo.settings'),
+    description: t('seo.settings_description'),
+    ogDescription: t('seo.settings_description'),
+  })
 </script>
 
 <template>

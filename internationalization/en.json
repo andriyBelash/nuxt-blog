@@ -63,5 +63,12 @@
       "cropper": "Crop image"
     },
     "change_password": "Change password"
+  },
+
+  "seo": {
+    "settings": "Settings",
+    "settings_description": "User settings",
+    "articles": "Articles",
+    "articles_description": "User articles"
   }
 }

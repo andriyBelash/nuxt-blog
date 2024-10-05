@@ -38,6 +38,14 @@ const register = async () => {
     }
   }
 }
+
+useSeoMeta({
+  title: t('auth.signup'),
+  ogTitle: t('auth.signup'),
+  description: t('auth.enter_registration_details'),
+  ogDescription: t('auth.enter_registration_details'),
+})
+
 </script>
 
 <template>
