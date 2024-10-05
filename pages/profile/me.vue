@@ -35,7 +35,7 @@
           email: store.user.email,
         }" 
       />
-      <LinkTabs class="mt-16" :tabs="PROFILE_TABS" :basePath="'/profile/me'" :selected-key='currentTab' />
+      <LinkTabs class="mt-8 md:mt-16" :tabs="PROFILE_TABS" :basePath="'/profile/me'" :selected-key='currentTab' />
       <div class="mt-8">
         <NuxtPage/>
       </div>

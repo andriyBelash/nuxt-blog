@@ -28,16 +28,18 @@
     <div class="profile-header--background">
       <img src="/background/profile.webp" alt="background">
     </div>
-    <div class="profile-header-info flex items-start">
-      <div class="profile-header-info--avatar">
-        <img v-if="profile.logo" :src="profile.logo" alt="avatar"/>
-        <img v-else src="/placeholder-avatar.jpg" alt="avatar"/>
+    <div class="profile-header-info flex">
+      <div class="flex gap-4">
+        <div class="profile-header-info--avatar">
+          <img v-if="profile.logo" :src="profile.logo" alt="avatar"/>
+          <img v-else src="/placeholder-avatar.jpg" alt="avatar"/>
+        </div>
+        <div class="profile-header-info--credentials">
+          <h1 class="profile-header-info--name">{{ profile.username }}</h1>
+          <p class="profile-header-info--email">{{ profile.email }}</p>
+        </div>
       </div>
-      <div class="profile-header-info--credentials">
-        <h1 class="profile-header-info--name">{{ profile.username }}</h1>
-        <p class="profile-header-info--email">{{ profile.email }}</p>
-      </div>
-      <UiButton @click="logout" class="ml-auto mr-4 mt-4" :label="t('auth.log_out')" />
+      <UiButton @click="logout" class="flex h-max ml-auto mr-4 mt-4" :label="t('auth.log_out')" />
     </div>
   </div>
 </template>
@@ -94,5 +96,39 @@
 
   .profile-header-info--email{
     color: var(--v-secondary-text);
+  }
+
+  @media screen and (max-width: 767.98px) {
+    .profile-header{
+      height: auto;
+      gap: 16px;
+      display: flex;
+      flex-direction: column;
+    }
+    .profile-header--background{
+      height: 100px;
+    }
+    .profile-header-info--avatar{
+      top: 0;
+      width: 60px;
+      height: 60px;
+      border-width: 1px;
+      border-radius: 8px;
+    }
+
+    .profile-header-info{
+      flex-direction: column;
+      height: auto;
+      gap: 8px;
+      padding-bottom: 16px;
+    }
+
+    .profile-header-info--name{
+      font-size: 18px;
+    }
+
+    .profile-header-info--email{
+      font-size: 14px;
+    }
   }
 </style>

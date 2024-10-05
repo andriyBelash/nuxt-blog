@@ -11,12 +11,12 @@
 </script>
 
 <template>
-  <header class="flex">
+  <header class="flex items-center">
     <div class="wrapper flex justify-between">
       <div>
         <ThemeLogo />
       </div>
-      <div class="flex gap-4">
+      <div class="flex items-center gap-4">
 
         <AccountBlock :profile="store.user" v-if="store.user" />
         <NuxtLinkLocale v-else to="/auth/login">

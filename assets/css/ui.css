@@ -21,6 +21,10 @@
   font-size: 18px;
 }
 
+.tabs-container a:hover{
+  color: rgb(from var(--v-blue) r g b / 0.8);
+}
+
 .tabs-container a.active-link{
   color: var(--v-blue);
   border-bottom: 2px solid var(--v-blue);

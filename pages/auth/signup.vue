@@ -41,7 +41,7 @@ const register = async () => {
 </script>
 
 <template>
-  <main class="center h-100">
+  <main class="center h-100 wrapper">
     <div class="auth-card flex-col">
       <h2 class="auth-card--title">{{ t('auth.signup') }}</h2>
       <p>{{ t('auth.enter_registration_details') }}</p>

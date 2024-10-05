@@ -17,10 +17,31 @@
     "required_fields": "Required fields are missing",
     "invalid_credentials": "Invalid credentials",
     "min_length_6": "Password must be at least 6 characters long",
+    "min_length_3": "Username must be at least 3 characters long",
     "invalid_email_format": "Invalid email format",
     "passwords_do_not_match": "Passwords do not match",
     "email_already_exists": "Email already exists",
     "username_already_exists": "Username already exists"
+  },
+
+  "toast": {
+    "error": {
+      "default": "Error",
+      "invalid_credentials": "Invalid credentials",
+      "min_length_6": "Password must be at least 6 characters long",
+      "min_length_3": "Username must be at least 3 characters long",
+      "invalid_email_format": "Invalid email format",
+      "passwords_do_not_match": "Passwords do not match",
+      "email_already_exists": "Email already exists",
+      "username_already_exists": "Username already exists"
+    },  
+
+    "success": {
+      "default": "Success",
+      "user_created": "User created",
+      "user_updated": "User updated",
+      "user_deleted": "User deleted"
+    }
   },
 
   "tab": {
@@ -33,5 +54,14 @@
     "delete": "Delete",
     "cancel": "Cancel",
     "save": "Save"
+  },
+
+  "settings": {
+    "upload": {
+      "image": "Upload image",
+      "recommended": "We recommend adding a real photo. This will increase the trust of other users in you.",
+      "cropper": "Crop image"
+    },
+    "change_password": "Change password"
   }
 }

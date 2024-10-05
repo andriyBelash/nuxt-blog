@@ -1,20 +1,57 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import CropperModal from './CropperModal.vue';
+  import { ref, type Ref } from 'vue';
+  import { useProfileStore } from '#imports';
+
+  defineProps<{ logo: string }>()
+
+  const store = useProfileStore()
+  const { t } = useI18n()
+
+  const demo: Ref<string> = ref('')
+  const showCropper: Ref<boolean> = ref(false)
+  const cropperFile: Ref<string | null> = ref(null)
+
+  const changeFile = (event: Event) => {
+    const target = event.target as HTMLInputElement
+    if (!target.files) return
+    cropperFile.value = URL.createObjectURL(target.files[0])
+    showCropper.value = true
+  }
+
+  const toggleCropper = () => {
+    showCropper.value = !showCropper.value
+  }
+
+  const cropImage = (blob: File) => {
+    demo.value = URL.createObjectURL(blob)
+    store.formUser.file = blob
+  } 
+  
+</script>
 
 <template>
   <div class="user-file-input flex gap-4">
     <div class="user-file-input--input">
-      <input accept="image/*" id="avatar" type="file"/>
+      <input @change="($event) => changeFile($event)" accept="image/*" id="avatar" type="file"/>
       <label for="avatar">
-        <img src="/placeholder-avatar.jpg" alt="avatar"/>
+        <img :src="demo || logo" alt="avatar"/>
       </label>
     </div>
     <div class="flex flex-col items-start user-file-input--info">
-      <span>Завантажити фото</span>
+      <span>{{ t('settings.upload.image') }}</span>
       <p>
-        Рекомендуємо додати реальне фото. Це підвищить довіру інших користувачів до вас.
+        {{ t('settings.upload.recommended') }}
       </p>
     </div>
   </div>
+
+  <CropperModal
+    @close="toggleCropper" 
+    :file="cropperFile" 
+    :show="showCropper" 
+    @change="cropImage"
+  />
 </template>
 
 
@@ -26,7 +63,7 @@
 
   .user-file-input--input{
     position: relative;  
-    width: 100px;
+    min-width: 100px;
     height: 100px;
     border-radius: 16px;
     overflow: hidden;
@@ -61,6 +98,22 @@
 
     p{
       color: var(--v-secondary-text);
+    }
+  }
+
+  @media screen and (max-width: 767.98px) {
+    .user-file-input--input{
+      min-width: 80px;
+      height: 80px;
+      border-width: 2px;
+    }
+
+    .user-file-input--info span{
+      font-size: 18px;
+    }
+
+    .user-file-input--info p{
+      font-size: 14px;
     }
   }
 </style>

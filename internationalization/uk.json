@@ -16,10 +16,31 @@
     "required_fields": "Потрібні поля є обов'язковими",
     "invalid_credentials": "Невірні дані",
     "min_length_6": "Пароль має бути не менше 6 символів",
+    "min_length_3": "Ім'я користувача має бути не менше 3 символів",
     "invalid_email_format": "Невірний формат email",
     "passwords_do_not_match": "Паролі не збігаються",
     "email_already_exists": "Email вже існує",
     "username_already_exists": "Ім'я користувача вже існує"
+  },
+
+  "toast": {
+    "error": {
+      "default": "Помилка",
+      "invalid_credentials": "Невірні дані",
+      "min_length_6": "Пароль має бути не менше 6 символів",
+      "min_length_3": "Ім'я користувача має бути не менше 3 символів",
+      "invalid_email_format": "Невірний формат email",
+      "passwords_do_not_match": "Паролі не збігаються",
+      "email_already_exists": "Email вже існує",
+      "username_already_exists": "Ім'я користувача вже існує"
+    },
+
+    "success": {
+      "default": "Успіх",
+      "user_created": "Користувача створено",
+      "user_updated": "Користувача оновлено",
+      "user_deleted": "Користувача видалено"
+    }
   },
 
   "tab": {
@@ -32,5 +53,14 @@
     "delete": "Видалити",
     "save": "Зберегти",
     "cancel": "Скасувати"
+  },
+
+  "settings": {
+    "upload": {
+      "image": "Завантажити зображення",
+      "recommended": "Рекомендуємо додати реальне фото. Це підвищить довіру інших користувачів до вас.",
+      "cropper": "Обрізати зображення"
+    },
+    "change_password": "Змінити пароль"
   }
 }

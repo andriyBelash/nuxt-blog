@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <NuxtLinkLocale to="/profile/me/settings" class="account-block flex gap-2">
+  <NuxtLinkLocale to="/profile/me/settings" class="account-block flex items-center gap-2">
     <img v-if="profile.avatar_url" :src="profile.avatar_url" alt="profile.username">
     <img v-else src="/placeholder-avatar.jpg" alt="profile.username">
     <div class="account-block--info justify-between flex-col">

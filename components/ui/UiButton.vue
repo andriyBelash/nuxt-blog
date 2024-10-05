@@ -10,6 +10,7 @@
 <template>
   <button @click="emit('click')" :class="variant" class="ui-button">
     {{ label }}
+    <slot />
   </button>
 </template>
 
@@ -17,9 +18,11 @@
   .ui-button{
     border: none;
     font-size: 18px;
-    padding: 8px 16px;
+    padding: 6px 14px;
     border-radius: 8px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid var(--v-blue);
   }
 
   .ui-button.outlined{
@@ -29,7 +32,7 @@
   }
 
   .ui-button.outlined:hover{
-    background-color: var(--v-blue);
+    background-color: rgb(from var(--v-blue) r g b / 0.5);
     color: var(--white);
   }
 
@@ -43,13 +46,20 @@
   }
 
   .ui-button.filled:hover{
-    background-color: var(--v-background);
+    background-color: rgb(from var(--v-blue) r g b / 0.7);
     color: var(--v-primary-text);
-    outline: 1px solid var(--v-blue);
   }
 
   .ui-button.filled:active{
     background-color: var(--v-blue);
     color: var(--white);
+  }
+
+  @media screen and (max-width: 767.98px) {
+    .ui-button{
+      font-size: 14px;
+      padding: 4px 8px;
+    }
+
   }
 </style>

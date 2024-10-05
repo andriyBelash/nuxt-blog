@@ -32,7 +32,7 @@ body{
 
 .wrapper{
   max-width: 1246px;
-  padding: 0 30px;
+  padding: 0 15px;
   margin: 0 auto;
   width: 100%;
 }
@@ -53,4 +53,12 @@ body{
 
 html, body, #__nuxt, #__layout{
   height: 100%;
+}
+
+
+@media screen and (max-width: 767.98px) {
+  .input{
+    font-size: 16px;
+    padding: 4px 8px;
+  }
 }

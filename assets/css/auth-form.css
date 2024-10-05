@@ -22,3 +22,9 @@
 .auth-card--form .ui-button{
   margin-top: 8px;
 }
+
+@media screen and (max-width: 500px) {
+  .auth-card{
+    padding: 24px;
+  }
+}

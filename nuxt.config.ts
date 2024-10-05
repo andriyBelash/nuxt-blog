@@ -16,6 +16,20 @@ export default defineNuxtConfig({
     }
   },
 
+  tailwindcss: {
+    config: {
+      theme: {
+        screens: {
+          'sm': '640px',
+          'md': '767.98px',
+          'lg': '1024px',
+          'xl': '1280px',
+          '2xl': '1536px'
+        }
+      }
+    }
+  },
+
   i18n: {
     strategy: 'prefix_and_default',
     defaultLocale: 'uk',

@@ -4,7 +4,7 @@ import { AuthService } from '~/lib/services/auth.service'
 import { useProfileStore } from './profile.store'
 import { useToast } from '~/composables/useToast'
 
-import type { Tokens, RegisterForm, User, AuthResponse } from '~/lib/types/user'
+import type { Tokens, RegisterForm, AuthResponse } from '~/lib/types/user'
 import { UserRole } from '~/lib/types/enum'
 
 export const useAuthStore = defineStore('auth', () => {
@@ -78,6 +78,7 @@ export const useAuthStore = defineStore('auth', () => {
       const res = await AuthService.refreshToken(refresh_token.value)
       manageToken(res.data.value as Tokens)
     }
+    return Promise.resolve()
   }
 
   const logOut = () => {

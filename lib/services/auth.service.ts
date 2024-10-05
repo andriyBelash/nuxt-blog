@@ -28,7 +28,7 @@ export class AuthService {
   public static refreshToken(refresh_token: string) {
     return useApiFetch('/auth/refresh', {
       method: 'POST',
-      body: { refresh_token }
+      body: { token: refresh_token }
     })
   }
 }

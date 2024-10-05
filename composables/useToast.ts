@@ -10,7 +10,18 @@ export const useToast = () => {
     }
   }
 
+  const handleError = (error: any) => {
+    errorToast(error.message)
+    return Promise.reject(error)
+  }
+
+  const successToast = (message: string) => {
+    toast.success(t('toast.success.' + message))
+  }
+
   return {
-    errorToast
+    errorToast,
+    handleError,
+    successToast
   }
 }

@@ -10,6 +10,12 @@ export interface RegisterForm extends LoginForm {
   role: UserRole
 }
 
+export interface UpdateUserForm{
+  username: string,
+  file?: File | null,
+  email: string
+}
+
 export interface Tokens {
   access_token: string
   refresh_token: string
